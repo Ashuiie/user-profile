@@ -34,7 +34,6 @@
                 <x-input-label for="address" value="Address" />
                 <x-text-input type="text" name="address" id="address" class="block w-full" :value="$user->profile->address ?? ''" />
             </div>
-
             <x-primary-button>Update User</x-primary-button>
         </form>
     </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/users/{user}/edit', [DashboardController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [DashboardController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [DashboardController::class, 'destroy'])->name('users.destroy');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
 
 

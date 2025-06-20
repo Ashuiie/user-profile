@@ -34,7 +34,6 @@ public function store(Request $request) {
 
     Profile::create([
         'user_id' => $user->id,
-        'bio' => '',
         'phone' => '',
         'address' => '',
     ]);
@@ -52,7 +51,6 @@ public function update(Request $request, User $user)
     $request->validate([
         'name' => 'required',
         'email' => 'required|email',
-        'bio' => 'nullable|string',
         'phone' => 'nullable|string',
         'address' => 'nullable|string',
     ]);
@@ -63,7 +61,6 @@ public function update(Request $request, User $user)
     ]);
 
     $user->profile->update([
-        'bio' => $request->bio,
         'phone' => $request->phone,
         'address' => $request->address,
     ]);

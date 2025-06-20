@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-10 max-w-2xl mx-auto px-4">
+    <div class="py-10 max-w-2xl mx-auto px-6">
         <form method="POST" action="{{ route('users.update', $user) }}">
             @csrf
             @method('PUT')
@@ -19,12 +19,6 @@
                 <x-input-label for="email" value="Email" />
                 <x-text-input type="email" name="email" id="email" class="block w-full" :value="$user->email" required />
             </div>
-
-            <div class="mb-4">
-                <x-input-label for="bio" value="Bio" />
-                <x-text-input type="text" name="bio" id="bio" class="block w-full" :value="$user->profile->bio ?? ''" />
-            </div>
-
             <div class="mb-4">
                 <x-input-label for="phone" value="Phone" />
                 <x-text-input type="text" name="phone" id="phone" class="block w-full" :value="$user->profile->phone ?? ''" />

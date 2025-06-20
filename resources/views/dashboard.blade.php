@@ -25,7 +25,6 @@
                 <th class="px-6 py-4 text-left whitespace-nowrap">Name</th>
                 <th class="px-6 py-4 text-left whitespace-nowrap">Email</th>
                 <th class="px-6 py-4 text-left whitespace-nowrap">Phone</th>
-                <th class="px-6 py-4 text-left whitespace-nowrap">Bio</th>
                 <th class="px-6 py-4 text-left whitespace-nowrap">Address</th>
                 <th class="px-6 py-4 text-left whitespace-nowrap">Actions</th>
             </tr>
@@ -36,9 +35,6 @@
                         <td class="px-6 py-4">{{ $user->name }}</td>
                         <td class="px-6 py-4">{{ $user->email }}</td>
                         <td class="px-6 py-4">{{ $user->profile->phone ?? 'N/A' }}</td>
-                        <td class="px-6 py-4 truncate max-w-xs" title="{{ $user->profile->bio ?? 'N/A' }}">
-                            {{ \Illuminate\Support\Str::limit($user->profile->bio ?? 'N/A', 40, '...') }}
-                        </td>
                         <td class="px-6 py-4 truncate max-w-xs" title="{{ $user->profile->address ?? 'N/A' }}">
                             {{ \Illuminate\Support\Str::limit($user->profile->address ?? 'N/A', 40, '...') }}
                         </td>
